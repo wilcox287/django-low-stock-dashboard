@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Dashboard</title>
+</head>
+<body>
+
+<h1>Inventory Dashboard</h1>
+
+<h2>Low Stock Threshold: {{ threshold }}</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Stock</th>
+        <th>Reorder Suggestion</th>
+    </tr>
+
+    {% for product in low_stock_products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.stock }}</td>
+        <td>Order {{ product.reorder_quantity }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
